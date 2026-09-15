@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 30 10% 15%;
+    --card: 40 30% 99%;
+    --card-foreground: 30 10% 15%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 30 10% 15%;
+    --primary: 152 23% 28%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 35 28% 90%;
+    --secondary-foreground: 30 10% 20%;
+    --muted: 35 20% 90%;
+    --muted-foreground: 30 8% 45%;
+    --accent: 18 55% 52%;
+    --accent-foreground: 40 33% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 33% 98%;
+    --border: 35 15% 86%;
+    --input: 35 15% 86%;
+    --ring: 152 23% 28%;
+    --radius: 0.5rem;
+
+    --sage-50: 150 20% 96%;
+    --sage-100: 150 18% 90%;
+    --sage-200: 148 16% 80%;
+    --sage-300: 146 15% 65%;
+    --sage-400: 150 20% 48%;
+    --sage-500: 152 23% 38%;
+    --sage-600: 152 25% 30%;
+    --sage-700: 152 27% 24%;
+    --sage-800: 152 28% 18%;
+    --sage-900: 152 30% 12%;
+
+    --clay-50: 20 40% 95%;
+    --clay-100: 20 45% 88%;
+    --clay-200: 18 50% 78%;
+    --clay-300: 18 52% 68%;
+    --clay-400: 18 55% 58%;
+    --clay-500: 18 58% 50%;
+    --clay-600: 18 60% 42%;
+    --clay-700: 18 62% 34%;
+    --clay-800: 18 64% 26%;
+    --clay-900: 18 66% 18%;
+
+    --sand-50: 40 35% 97%;
+    --sand-100: 38 32% 94%;
+    --sand-200: 36 28% 88%;
+    --sand-300: 34 25% 82%;
+    --sand-400: 32 22% 72%;
+    --sand-500: 30 20% 60%;
+    --sand-600: 28 18% 48%;
+    --sand-700: 26 16% 38%;
+    --sand-800: 24 14% 28%;
+    --sand-900: 22 12% 18%;
+  }
+
+  .dark {
+    --background: 152 28% 10%;
+    --foreground: 40 33% 95%;
+    --card: 152 28% 12%;
+    --card-foreground: 40 33% 95%;
+    --popover: 152 28% 12%;
+    --popover-foreground: 40 33% 95%;
+    --primary: 150 18% 80%;
+    --primary-foreground: 152 28% 12%;
+    --secondary: 152 20% 18%;
+    --secondary-foreground: 40 33% 95%;
+    --muted: 152 20% 18%;
+    --muted-foreground: 40 15% 65%;
+    --accent: 18 55% 58%;
+    --accent-foreground: 40 33% 98%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 40 33% 98%;
+    --border: 152 20% 22%;
+    --input: 152 20% 22%;
+    --ring: 150 18% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02";
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+  .font-sans {
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+  .animate-fade-in-delayed {
+    animation: fade-in 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .hero-image-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
